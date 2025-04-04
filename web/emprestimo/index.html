@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/footer.css">
+    <title>Aguardando resposta da API</title>
+</head>
+
+<body>
+    <section id="cadastro" class="modal oculto">
+        <div class="janela">
+            <div class="modal-header">
+                <h2>Cadastro de Empréstimo</h2>
+                <button class="btn-fechar">X</button>
+            </div>
+            <form>
+                <input type="text" placeholder="RA do Aluno" name="alunoRa" required>
+                <input type="number" placeholder="Id do Livro" name="livroId" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </section>
+
+    <header>
+        <h1>Página de Cadastro</h1>
+        <nav>
+            <ul>
+                <li><a href="../livro">Livros</a></li>
+                <li><a href="../aluno/">Alunos</a></li>
+                <li><a href="../emprestimo/">Empréstimos</a></li>
+            </ul>
+            <button class="btn-12"><span>Cadastrar</span></button>
+        </nav>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="6">Lista de Empréstimos</th>
+                </tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Aluno RA</th>
+                    <th>Livro ID</th>
+                    <th colspan="2">Retirada</th>
+                    <th colspan="2">Devolução</th>
+                    <th>Multa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dinamicamente gerado -->
+            </tbody>
+        </table>
+    </main>
+
+    <footer>By Lucas G. Giachetto</footer>
+
+    <section id="detalhes" class="modal oculto">
+        <div class="janela">
+            <div class="modal-header">
+                <h2>Detalhes do Empréstimo</h2>
+                <button class="fechar">X</button>
+            </div>
+            <form>
+                <label for="id">Id</label>
+                <input type="number" placeholder="Id" name="id" disabled>
+                <label for="alunoRa">RA do Aluno</label>
+                <input type="text" placeholder="RA do Aluno" name="alunoRa" required>
+                <input type="text" name="aluno" disabled>
+                <label for="livroId">Id do Livro</label>
+                <input type="number" placeholder="Id do Livro" name="livroId" required>
+                <input type="text" name="livro" disabled>
+                <label for="retirada">Retirada</label>
+                <input type="datetime-local" name="retirada" required>
+                <label for="devolucao">Devolução</label>
+                <input type="datetime-local" name="devolucao">
+                <label for="multa">Multa</label>
+                <input type="number" step="0.02" placeholder="Multa" name="multa">
+                <button type="submit">Atualizar</button>
+            </form>
+            <button class="excluir" onclick="excluir()">Excluir</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
